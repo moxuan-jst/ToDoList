@@ -44,12 +44,12 @@ let vm = new Vue({
             }
         },
         remove(title){ 
-            alter(1);
-            if (confirm()) {
-                this.titles = this.titles.filter(item => item !== title);
-            }else{
-                return
-            }
+            $('#myModal').on('hidden.bs.modal', function (e) {
+                // this.titles = this.titles.filter(item => item !== title);
+                console.log(this.titles);
+              })
+            
+
                 
             
         },

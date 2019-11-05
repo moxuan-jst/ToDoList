@@ -1,0 +1,19 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN""http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>js确认删除对话框</title>
+<script language="javascript">
+function delcfm() {
+if (!confirm("确认要删除？")) {
+window.event.returnValue = false;
+}
+}
+</script>
+</head>
+<body>
+<p>
+<a href="http://www.baidu.com/" onClick="delcfm()">删除</a></p>
+<p>代码说明：单击删除的超链接后将执行delcfm()函数，在对话框中，如果点击“确定”，函数将返回true值，就将页面转到<a>标签中的链接页面执行删除的页面；如果点击“取消”，函数将返回false值，<a>标签将不转到执行删除的页面。</p>
+</body>
+</html>

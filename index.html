@@ -49,6 +49,7 @@
                         </span>
                     </div>
                     <div class="alert alert-danger" v-show="flag" role="alert">你没有添加任务哦～</div>
+
                     <!-- 面板title -->
                     <div class="panel panel-success">
                         <div class="panel-heading">
@@ -68,7 +69,7 @@
                                     <input type="text" v-show="cur==title" v-model="title.content" @keyup.enter="cancel" @blur="cancel" v-focus="cur==title">
 
                                     <button type="button" class="btn btn-danger btn-xs pull-right"  data-toggle="modal" data-target=".bs-example-modal-sm">
-                                        <span class="glyphicon glyphicon-trash" aria-hidden="true" ></span>
+                                        <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
                                     </button>
                                     
                                 </li>
@@ -82,27 +83,27 @@
                     </div>
                 </div>
             </div>
+            <!-- 警告框 -->
+            <div class="modal fade bs-example-modal-sm" id="myModal" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
+                <div class="modal-dialog  modal-sm" role="document">
+                    <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title text-danger" id="myModalLabel">放弃任务</h4>
+                    </div>
+                    <div class="modal-body">主人，你确定要放弃这项任务吗？</div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">让我再想想</button>
+                        <button type="button" class="btn btn-danger"  @click="remove(title)">放弃吧</button>
+                    </div>
+                    </div>
+                </div>
+            </div>
+
         </template>
     </div>
 </div>
-<!-- 警告框 -->
-<div class="modal fade bs-example-modal-sm" id="myModal" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
-    <div class="modal-dialog  modal-sm" role="document">
-        <div class="modal-content">
-        <div class="modal-header">
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-            <h4 class="modal-title text-danger" id="myModalLabel">放弃任务</h4>
-        </div>
-        <div class="modal-body"> 
-            主人，你确定要放弃这项任务吗？
-        </div>
-        <div class="modal-footer">
-            <button type="button" class="btn btn-default" data-dismiss="modal" @click="remove(title)">让我再想想</button>
-            <button type="button" class="btn btn-danger" @click="remove(title)">放弃吧</button>
-        </div>
-        </div>
-    </div>
-</div>
+
 
 
 <!-- jQuery (Bootstrap 的所有 JavaScript 插件都依赖 jQuery，所以必须放在前边) -->
