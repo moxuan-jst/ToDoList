@@ -5,6 +5,7 @@ let vm = new Vue({
         title:'',
         cur:'',
         hash:'',
+        flag: false,
     },
     created(){
         // 如果有localstorage，则设置，没有则设置默认
@@ -32,13 +33,25 @@ let vm = new Vue({
     },
     methods:{
         add(){
-            this.titles.push({
-                isSelected:false,content:this.title
-            });
-            this.title = '';
+            if (this.title === ''){
+                this.flag = true;
+            }else{
+                this.titles.push({
+                    isSelected:false,content:this.title
+                });
+                this.title = '';
+                this.flag = false;
+            }
         },
-        remove(title){ //拿到当前的值与数组中的值进行比对，返回false即可
-            this.titles = this.titles.filter(item => item !== title);
+        remove(title){ 
+            alter(1);
+            if (confirm()) {
+                this.titles = this.titles.filter(item => item !== title);
+            }else{
+                return
+            }
+                
+            
         },
         remember(title){
             this.cur = title;
