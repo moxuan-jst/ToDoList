@@ -1,3 +1,25 @@
+;
+// 下拉菜单
+(function(){
+    let btn = $(".navbar-brand");
+    // console.log(btn);
+    let mask = $(".mask");
+    let left = $(".left");
+    btn.on('click', function () { 
+        // console.log(1)
+        mask.css({"display": "block"});
+        left.slideDown("slow", function () {
+            left.css({"display": "block"});
+          })
+    });
+    mask.on('click',function () {
+        mask.css({"display": "none"});
+        left.slideUp("slow", function(){
+            left.css({"display": "none"});
+        });
+    })
+})();
+
 let vm = new Vue({
     el: "#app",
     data:{
@@ -21,6 +43,8 @@ let vm = new Vue({
             // 计算完成事件个数
             return this.titles.filter(item => !item.isSelected).length
         },
+
+        // 将路径进行hash
         filterHash(){
             if(this.hash === 'all')
                 return this.titles;
@@ -32,9 +56,14 @@ let vm = new Vue({
         }
     },
     methods:{
+        // 添加
         add(){
             if (this.title === ''){
                 this.flag = true;
+                // 自动取消提示
+                setTimeout(() => {
+                    this.flag = false;
+                }, 1500);
             }else{
                 this.titles.push({
                     isSelected:false,content:this.title
@@ -43,6 +72,8 @@ let vm = new Vue({
                 this.flag = false;
             }
         },
+
+        // 删除
         remove(title){ 
             if (!confirm("确认要删除？")) {
                 // confirm("提示内容",func), 弹出对话框，确定返回true，取消返回false
@@ -51,14 +82,18 @@ let vm = new Vue({
                 this.titles = this.titles.filter(item => item !== title);
             }            
         },
+
+        // 记住要修改的一项
         remember(title){
             this.cur = title;
         },
         cancel(){
             this.cur = '';
-        }
+        },
+
     },
-    directives:{
+    directives:{  //自定义指令
+        // 双击获取焦点
         focus(el,bindings){
             if(bindings.value){
                 el.focus();
@@ -74,3 +109,5 @@ let vm = new Vue({
         }
     },
 });
+
+    
