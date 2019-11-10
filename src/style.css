@@ -38,16 +38,23 @@ ul li{
 .left ul li>a{
     text-decoration: none;
     font-size: 16px;
-
 }
 .left{
-    position: relative;
-    top: -20px;
+    position: absolute;
+    top: 53px;
+    left: 20px;
     display: none;
-    z-index: 10;
-    /* width: 200px; */
-    /* height: 600px; */
+    z-index: 11;
+    width: 220px; 
+    height: 130px;
 }
+.left-group{
+    height: 100%;
+    width: 100%;
+    margin-bottom: 0;
+}
+/* 三角 */
+
 /* 幕布 */
 .mask{
     position:absolute;
@@ -56,7 +63,7 @@ ul li{
     right: 0;
     bottom: 0;
     display: none;
-    z-index: 2;
+    z-index: 10;
     background:rgba(0, 0, 0, .25);
 }
 .input-group{
