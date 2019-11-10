@@ -46,10 +46,11 @@ ul li{
     display: none;
     z-index: 11;
 }
-.list-group .my-list{
+.my-list{
     width: 220px; 
     height: 130px;
     margin-bottom: 0;
+    z-index: 10;
 }
 /* 三角 */
 
