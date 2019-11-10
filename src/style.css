@@ -45,12 +45,10 @@ ul li{
     left: 20px;
     display: none;
     z-index: 11;
+}
+.list-group{
     width: 220px; 
     height: 130px;
-}
-.my-list{
-    height: 100%;
-    width: 100%;
     margin-bottom: 0;
 }
 /* 三角 */
