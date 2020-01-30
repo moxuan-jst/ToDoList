@@ -5,8 +5,8 @@
 ## 使用
 
 ```bash
-npm init -y 
 npm install
+gulp 
 ```
 
 
