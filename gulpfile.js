@@ -55,4 +55,4 @@ gulp.task('img', () => {
     .pipe(gulp.dest('./build/img'))
 })
 
-gulp.task('default', gulp.series(gulp.parallel('img','html', 'js', 'css')));
+gulp.task('default', gulp.series(gulp.parallel('img', 'html', 'js', 'css')));
